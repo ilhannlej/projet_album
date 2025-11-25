@@ -14,6 +14,7 @@
                 <a href="{{url('/') }}"><span>Albums</span></a>
                 <a href="{{url('/') }}"><span>Photos</span></a>
                 <a href="{{url('/') }}"><span>Connexion</span></a>
+
         </nav>
     </header>
 
@@ -22,11 +23,7 @@
         @yield('contenu')
     </main>
 
-    <aside>
-        <!-- Rappel rapide des consignes / fonctionnalités (peut être affiché sur la page d'accueil) -->
 
-
-    <!-- Place pour les scripts JS (à ajouter plus tard) -->
     @stack('scripts')
     @yield('scripts')
 </body>
