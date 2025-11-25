@@ -1,22 +1,19 @@
 @extends('templates.template')
 
-@section('title', 'Photos de l\'album')
-
 @section('contenu')
-    <h2>Photos de l'album</h2>
+<h2>Liste des albums</h2>
 
-    @if(count($photos) === 0)
-        <p>Aucune photo dans cet album.</p>
-    @else
-        <ul>
-            @foreach ($photos as $photo)
-                <li>
-                    <strong>{{ $photo->titre }}</strong><br>
-                    Note : {{ $photo->note }}<br>
-                    <img src="{{ $photo->url }}" alt="{{ $photo->titre }}" width="200"><br>
-                </li>
-                <hr>
-            @endforeach
-        </ul>
-    @endif
+@if(count($albums) === 0)
+    <p>Aucun album trouvé.</p>
+@else
+    <ul>
+        @foreach ($albums as $album)
+            <li>
+                <strong>{{ $album->titre }}</strong>
+                <br>
+                <a href="{{ url('/albums/' . $album->id) }}">Voir les photos</a>
+            </li>
+        @endforeach
+    </ul>
+@endif
 @endsection
