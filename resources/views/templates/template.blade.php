@@ -4,21 +4,16 @@
     <meta charset="UTF-8">
     <title>@yield('title', 'Gestionnaire d\'album photo')</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <!-- Place pour les liens CSS / fonts (à ajouter plus tard) -->
-    @stack('styles')
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1>Gestionnaire d'album photo</h1>
-        <p class="lead">Projet de gestion d'albums — travail à réaliser à deux</p>
         <nav>
-            <!-- Liens non ajoutés pour l'instant -->
-            <ul>
-                <li><span>Accueil</span></li>
-                <li><span>Albums</span></li>
-                <li><span>Photos</span></li>
-                <li><span>Connexion</span></li>
-            </ul>
+                <a href="{{url('/') }}"><span>Accueil</span></a>
+                <a href="{{url('/') }}"><span>Albums</span></a>
+                <a href="{{url('/') }}"><span>Photos</span></a>
+                <a href="{{url('/') }}"><span>Connexion</span></a>
         </nav>
     </header>
 
