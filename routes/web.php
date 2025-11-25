@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AlbumsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/albums', [AlbumsController::class, 'index']);
+Route::get('/albums/{id}', [AlbumsController::class, 'show']);
+

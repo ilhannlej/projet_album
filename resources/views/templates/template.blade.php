@@ -14,7 +14,7 @@
         <nav>
             <!-- Liens non ajoutés pour l'instant -->
             <ul>
-                <li><span>Accueil</span></li>
+                <li><a href="{{ url('/') }}"><span>Accueil</span></a></li>
                 <li><span>Albums</span></li>
                 <li><span>Photos</span></li>
                 <li><span>Connexion</span></li>
@@ -27,11 +27,7 @@
         @yield('contenu')
     </main>
 
-    <aside>
-        <!-- Rappel rapide des consignes / fonctionnalités (peut être affiché sur la page d'accueil) -->
 
-
-    <!-- Place pour les scripts JS (à ajouter plus tard) -->
     @stack('scripts')
     @yield('scripts')
 </body>
