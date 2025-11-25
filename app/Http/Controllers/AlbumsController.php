@@ -49,10 +49,10 @@ public function show($id)
 
     $photos = DB::select($sql, $params);
 
-    return view('albums', [
-        'photos' => $photos,
-        'tags'   => $tags,
-        'album_id' => $id
+        return view('album', [
+    'photos' => $photos,
+    'tags'   => $tags,
+    'album_id' => $id
     ]);
 }
 }

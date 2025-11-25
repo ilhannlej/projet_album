@@ -11,7 +11,7 @@
         <h1>Gestionnaire d'album photo</h1>
         <nav>
                 <a href="{{url('/') }}"><span>Accueil</span></a>
-                <a href="{{url('/') }}"><span>Albums</span></a>
+                <a href="{{url('/albums') }}"><span>Albums</span></a>
                 <a href="{{url('/') }}"><span>Photos</span></a>
                 <a href="{{url('/') }}"><span>Connexion</span></a>
 
