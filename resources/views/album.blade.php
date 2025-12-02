@@ -9,8 +9,8 @@
 
     <input type="text" name="search" placeholder="Rechercher une photo..." value="{{ request('search') }}">
 
-    <select name="tag_id">
-        <option value="">-- Filtrer par étiquette --</option>
+    <select class="deroule" name="tag_id">
+        <option value="">Filtrer par étiquette</option>
         @foreach ($tags as $tag)
             <option value="{{ $tag->id }}" 
                 {{ request('tag_id') == $tag->id ? 'selected' : '' }}>
@@ -20,8 +20,8 @@
     </select>
 
     <!-- ▼ NOUVEAU ▼ -->
-    <select name="sort">
-        <option value="">-- Trier par --</option>
+    <select class="deroule" name="sort">
+        <option value="">Trier par</option>
         <option value="titre_asc"  {{ request('sort') == 'titre_asc' ? 'selected' : '' }}>Titre (A → Z)</option>
         <option value="titre_desc" {{ request('sort') == 'titre_desc' ? 'selected' : '' }}>Titre (Z → A)</option>
         <option value="note_asc"   {{ request('sort') == 'note_asc' ? 'selected' : '' }}>Note (faible → forte)</option>
@@ -29,7 +29,7 @@
     </select>
     <!-- ▲ NOUVEAU ▲ -->
 
-    <button type="submit">Filtrer</button>
+    <button class="bouton" type="submit">Filtrer</button>
 </form>
 
 <!-- Affichage des photos -->
@@ -81,7 +81,7 @@
     </div>
 </div>
 
-<a href="{{ url('/albums/' . $album_id . '/add') }}">Ajouter une photo</a>
+<a class="bouton" href="{{ url('/albums/' . $album_id . '/add') }}">Ajouter une photo</a>
 
 @endsection
 

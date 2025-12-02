@@ -73,3 +73,42 @@ nav{
     display: flex;
     justify-content: center;
 }
+
+input{
+    background-color: #ffffff;
+    border: 2px solid #ff1563;
+    border-radius: 10px;
+    width: 180px;
+    height: 29px;
+}
+.bouton{
+    background-color: #ff1563;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 6px 15px;
+    margin-left: 10px;
+}
+
+.deroule{
+    background-color: #ffffff;
+    border: 2px solid #ff1563;
+    border-radius: 10px;
+    padding: 6px;
+    width: 180px;
+    height: 35px;
+    font-size: 13px;
+    appearance: none; /* Supprime le style par défaut du navigateur */
+    -webkit-appearance: none; /* Pour Safari */
+    -moz-appearance: none; /* Pour Firefox */
+    cursor: pointer; /* Change le curseur au survol */
+}
+
+img{
+    width: 350px;
+    height: 230px;
+    border-radius: 10px;
+    margin: 15px;
+}
