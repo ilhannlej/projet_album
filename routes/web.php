@@ -19,4 +19,8 @@ Route::get('/', function () {
 });
 Route::get('/albums', [AlbumsController::class, 'index']);
 Route::get('/albums/{id}', [AlbumsController::class, 'show']);
+Route::get('/albums/{id}/add', [AlbumsController::class, 'addPhotoForm']);
+Route::post('/albums/{id}/add', [AlbumsController::class, 'addPhoto']);
+Route::post('/photos/{id}/delete', [AlbumsController::class, 'deletePhoto'])
+    ->name('photos.delete');
 
