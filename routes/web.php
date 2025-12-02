@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlbumsController;
+use App\Http\Controllers\PhotosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,6 @@ Route::get('/albums/{id}/add', [AlbumsController::class, 'addPhotoForm']);
 Route::post('/albums/{id}/add', [AlbumsController::class, 'addPhoto']);
 Route::post('/photos/{id}/delete', [AlbumsController::class, 'deletePhoto'])
     ->name('photos.delete');
-
+Route::get('/photos', [PhotosController::class, 'index']);
+Route::get('/photos/add', [PhotosController::class, 'addPhotoForm']);
+Route::post('/photos/add', [PhotosController::class, 'addPhoto']);
