@@ -19,7 +19,7 @@
         @endforeach
     </select>
 
-    <!-- ▼ NOUVEAU ▼ -->
+    
     <select name="sort">
         <option value="">-- Trier par --</option>
         <option value="titre_asc"  {{ request('sort') == 'titre_asc' ? 'selected' : '' }}>Titre (A → Z)</option>
@@ -27,7 +27,7 @@
         <option value="note_asc"   {{ request('sort') == 'note_asc' ? 'selected' : '' }}>Note (faible → forte)</option>
         <option value="note_desc"  {{ request('sort') == 'note_desc' ? 'selected' : '' }}>Note (forte → faible)</option>
     </select>
-    <!-- ▲ NOUVEAU ▲ -->
+    
 
     <button type="submit">Filtrer</button>
 </form>

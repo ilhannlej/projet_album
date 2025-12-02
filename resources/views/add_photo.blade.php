@@ -24,22 +24,24 @@
     <h3>Ou téléverser une image :</h3>
     <input type="file" name="fichier" accept="image/*"><br><br>
 
-    <label>Étiquettes :</label>
-<select name="tags[]" multiple>
-    @foreach ($tags as $tag)
-        <option value="{{ $tag->id }}">{{ $tag->nom }}</option>
-    @endforeach
+<label>Étiquettes :</label>
+    <select name="tags[]" multiple>
+        @foreach ($tags as $tag)
+            <option value="{{ $tag->id }}">{{ $tag->nom }}</option>
+        @endforeach
+    </select>  <!-- ⭐ la balise fermante était mal placée -->
+
     <label>Note (0 à 5) :</label><br>
-<select name="note" required>
-    <option value="0">0</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-</select>
-<br><br>
-</select>
+    <select name="note" required>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <br><br>
+
 
     <button type="submit">Ajouter</button>
 </form>
