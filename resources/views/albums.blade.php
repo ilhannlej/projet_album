@@ -6,8 +6,8 @@
 <!-- 🔽 Formulaire de tri des albums -->
 <form method="GET" action="{{ url('/albums') }}" style="margin-bottom:20px;">
 
-    <select name="sort">
-        <option value="">-- Trier par --</option>
+    <select class="deroule" name="sort">
+        <option value="">Trier par</option>
 
         <option value="titre_asc"  {{ request('sort') == 'titre_asc' ? 'selected' : '' }}>
             Titre (A → Z)
@@ -26,7 +26,7 @@
         </option>
     </select>
 
-    <button type="submit">Trier</button>
+    <button class="bouton" type="submit">Trier</button>
 </form>
 <!-- 🔼 Fin formulaire de tri -->
 

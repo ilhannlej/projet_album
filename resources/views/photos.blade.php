@@ -10,8 +10,8 @@
     <input type="text" name="search" placeholder="Rechercher une photo..."
            value="{{ request('search') }}">
 
-    <select name="tag_id">
-        <option value="">-- Filtrer par étiquette --</option>
+    <select class="deroule" name="tag_id">
+        <option value="">Filtrer par étiquette</option>
         @foreach ($tags as $tag)
             <option value="{{ $tag->id }}" {{ request('tag_id') == $tag->id ? 'selected' : '' }}>
                 {{ $tag->nom }}
@@ -19,8 +19,8 @@
         @endforeach
     </select>
 
-    <select name="sort">
-        <option value="">-- Trier par --</option>
+    <select class="deroule" name="sort">
+        <option value="">Trier par</option>
 
         <option value="titre_asc"  {{ request('sort') == 'titre_asc' ? 'selected' : '' }}>
             Titre (A → Z)
@@ -39,7 +39,7 @@
         </option>
     </select>
 
-    <button type="submit">Filtrer</button>
+    <button class="bouton" type="submit">Filtrer</button>
 </form>
 
 
@@ -47,7 +47,7 @@
 @if(count($photos) === 0)
     <p>Aucune photo trouvée.</p>
 @else
-    <div style="display:flex;flex-wrap:wrap;gap:20px;">
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center">
         @foreach ($photos as $photo)
             <div>
                 <img src="{{ $photo->url }}"
@@ -56,7 +56,7 @@
                      style="cursor:pointer;"
                      onclick="openLightbox('{{ $photo->url }}', {{ $photo->id }})">
 
-                <p>
+                <p class="description-photos">
                     <strong>{{ $photo->titre }}</strong><br>
                     <small>Album : {{ $photo->album }}</small><br>
                     <small>Note : {{ $photo->note }}/5</small>
@@ -94,7 +94,7 @@
         </button>
     </div>
 </div>
-<a href="{{ url('/photos/add') }}">Ajouter une photo</a>
+<a class="add-photo" href="{{ url('/photos/add') }}">Ajouter une photo</a>
 
 @endsection
 
