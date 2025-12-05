@@ -59,10 +59,10 @@
     <div style="position: relative;">
 
         <!-- IMAGE -->
-        <img id="lightbox-img" src="" style="max-width:90vw; max-height:90vh; border-radius:10px;">
+        <img id="lightbox-img" src="" style="width: 800px; height: 500px; max-width: 90vw; max-height: 90vh; border-radius:8px;">
 
         <!-- FORMULAIRE SUPPRIMER (POST + CSRF) -->
-        <form id="delete-form" method="POST" style="position:absolute; top:10px; right:10px;">
+        <form id="delete-form" method="POST" style="position:absolute; top:10px; left:10px;">
             @csrf
             <button id="delete-button" type="submit"
                onclick="return confirm('Supprimer cette photo ?')"
@@ -73,7 +73,7 @@
 
         <!-- BOUTON FERMER -->
         <button onclick="closeLightbox()"
-                style="position:absolute; top:10px; left:10px;
+                style="position:absolute; top:10px; right:10px;
                        background:#444; color:white; padding:10px 15px; border:none;
                        border-radius:6px; cursor:pointer;">
             Fermer
