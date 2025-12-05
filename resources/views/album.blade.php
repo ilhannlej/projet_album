@@ -9,8 +9,8 @@
 
     <input type="text" name="search" placeholder="Rechercher une photo..." value="{{ request('search') }}">
 
-    <select name="tag_id">
-        <option value="">-- Filtrer par étiquette --</option>
+    <select class="deroule" name="tag_id">
+        <option value="">Filtrer par étiquette</option>
         @foreach ($tags as $tag)
             <option value="{{ $tag->id }}" 
                 {{ request('tag_id') == $tag->id ? 'selected' : '' }}>
@@ -29,7 +29,7 @@
     </select>
     
 
-    <button type="submit">Filtrer</button>
+    <button class="bouton" type="submit">Filtrer</button>
 </form>
 
 <!-- Affichage des photos -->
