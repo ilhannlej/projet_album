@@ -1,0 +1,77 @@
+/* === Style général du formulaire === */
+.form-container {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Titre */
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Label */
+.form-container label {
+    font-weight: bold;
+    color: #444;
+}
+
+/* Inputs, selects, text, file */
+.form-container input[type="text"],
+.form-container input[type="file"],
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Select multiple */
+.form-container select[multiple] {
+    height: 120px;
+}
+
+/* Bouton */
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff1563;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #af053e;
+}
+
+/* Messages succès / erreur */
+.success-message {
+    color: green;
+    text-align: center;
+    font-weight: bold;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Sous-titres (Ajouter via URL etc.) */
+.form-container h3 {
+    margin-top: 15px;
+    color: #444;
+}
