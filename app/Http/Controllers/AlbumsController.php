@@ -7,14 +7,41 @@ use Illuminate\Support\Facades\DB;
 class AlbumsController extends Controller
 {
     public function index()
-    {
-        // Récupération des albums triés par date
-        $albums = DB::select('SELECT * FROM albums ORDER BY creation DESC');
+{
+    $sort = request()->query('sort', '');
 
-        return view('albums', [
-            'albums' => $albums,
-        ]);
+    $sql = "SELECT * FROM albums";
+
+    switch ($sort) {
+
+        case 'titre_asc':
+            $sql .= " ORDER BY titre ASC";
+            break;
+
+        case 'titre_desc':
+            $sql .= " ORDER BY titre DESC";
+            break;
+
+        case 'date_asc':
+            $sql .= " ORDER BY creation ASC";
+            break;
+
+        case 'date_desc':
+            $sql .= " ORDER BY creation DESC";
+            break;
+
+        default:
+            // Si pas de tri → tri par date DESC (comme avant)
+            $sql .= " ORDER BY creation DESC";
+            break;
     }
+
+    $albums = DB::select($sql);
+
+    return view('albums', [
+        'albums' => $albums
+    ]);
+}
 
     public function show($id)
     {
@@ -95,6 +122,7 @@ class AlbumsController extends Controller
 
 public function addPhoto(Request $request, $album_id)
 {
+    $note = $request->input('note');
     $titre = $request->input('titre');
 
     // Récupérer les tags sélectionnés (peut être absent)
@@ -105,9 +133,10 @@ public function addPhoto(Request $request, $album_id)
         $url = $request->input('url');
 
         DB::insert(
-            "INSERT INTO photos (titre, url, album_id) VALUES (:titre, :url, :album)",
-            ['titre' => $titre, 'url' => $url, 'album' => $album_id]
-        );
+        "INSERT INTO photos (titre, url, album_id, note)
+        VALUES (:titre, :url, :album, :note)",
+        ['titre' => $titre, 'url' => $url, 'album' => $album_id, 'note' => $note]
+    );
 
         // Récupérer l'id inséré
         $lastId = DB::getPdo()->lastInsertId();
@@ -136,9 +165,10 @@ public function addPhoto(Request $request, $album_id)
         $url = '/images/' . $filename;
 
         DB::insert(
-            "INSERT INTO photos (titre, url, album_id) VALUES (:titre, :url, :album)",
-            ['titre' => $titre, 'url' => $url, 'album' => $album_id]
-        );
+        "INSERT INTO photos (titre, url, album_id, note)
+                 VALUES (:titre, :url, :album, :note)",
+     ['titre' => $titre, 'url' => $url, 'album' => $album_id, 'note' => $note]
+            );
 
         // Récupérer l'id inséré
         $lastId = DB::getPdo()->lastInsertId();

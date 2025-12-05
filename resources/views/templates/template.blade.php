@@ -12,7 +12,7 @@
         <nav>
                 <a href="{{url('/') }}"><span>Accueil</span></a>
                 <a href="{{url('/albums') }}"><span>Albums</span></a>
-                <a href="{{url('/') }}"><span>Photos</span></a>
+                <a href="{{url('/photos') }}"><span>Photos</span></a>
                 <a href="{{url('/') }}"><span>Connexion</span></a>
 
         </nav>
