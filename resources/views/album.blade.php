@@ -20,8 +20,8 @@
     </select>
 
     
-    <select name="sort">
-        <option value="">-- Trier par --</option>
+    <select class="deroule" name="sort">
+        <option value=""> Trier par </option>
         <option value="titre_asc"  {{ request('sort') == 'titre_asc' ? 'selected' : '' }}>Titre (A → Z)</option>
         <option value="titre_desc" {{ request('sort') == 'titre_desc' ? 'selected' : '' }}>Titre (Z → A)</option>
         <option value="note_asc"   {{ request('sort') == 'note_asc' ? 'selected' : '' }}>Note (faible → forte)</option>
