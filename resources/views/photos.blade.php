@@ -49,7 +49,7 @@
 @else
     <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center">
         @foreach ($photos as $photo)
-            <div>
+            <div class="contour-photo">
                 <img src="{{ $photo->url }}"
                      alt="{{ $photo->titre }}"
                      width="200"

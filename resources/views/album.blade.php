@@ -36,7 +36,7 @@
 @if(count($photos) === 0)
     <p>Aucune photo ne correspond au filtre.</p>
 @else
-    <div style="display:flex;flex-wrap:wrap;gap:20px;">
+    <div class="contour-photo" style="display:flex;flex-wrap:wrap;gap:20px;">
         @foreach ($photos as $photo)
             <div>
                 <img
