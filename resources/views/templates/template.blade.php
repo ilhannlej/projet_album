@@ -23,7 +23,6 @@
         @yield('contenu')
     </main>
 
-
     @stack('scripts')
     @yield('scripts')
 </body>

@@ -39,14 +39,14 @@
     <div style="display:flex;flex-wrap:wrap;gap:20px;">
         @foreach ($photos as $photo)
             <div>
-                <img 
+                <img
                     src="{{ $photo->url }}" 
                     alt="{{ $photo->titre }}"
                     width="200"
                     onclick="openLightbox('{{ $photo->url }}', {{ $photo->id }})"
                     style="cursor:pointer;"
                 >
-                <p>{{ $photo->titre }}</p>
+                <p class="description-photos">{{ $photo->titre }}</p>
             </div>
         @endforeach
     </div>
@@ -81,7 +81,7 @@
     </div>
 </div>
 
-<a href="{{ url('/albums/' . $album_id . '/add') }}">Ajouter une photo</a>
+<a class="add-photo" href="{{ url('/albums/' . $album_id . '/add') }}">Ajouter une photo</a>
 
 @endsection
 

@@ -1,6 +1,6 @@
 body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: rgb(255, 205, 205);
+    background-color: #ffcdcd;
     margin: 0;
     padding: 0;
 }
@@ -13,10 +13,9 @@ h1, h2{
 
 strong{
     color: #ff1563;
-    margin-bottom: 28px;
+    margin-bottom: 1.1rem;
     display: inline-block;
     font-size: 25px;
-    text-transform: capitalize;
 }
 section.albums-liste{
     display: flex;
@@ -113,15 +112,21 @@ img{
     height: 230px;
     border-radius: 10px;
     margin: 15px;
+    border: 2px solid #ff1563;
 }
 
 .description-photos{
     font-size: 18px;
     width: 18rem;
     margin: auto;
-    padding: 2rem;
+    padding: 1rem 2rem;
     background-color: #ffffff;
+    border: 2px solid #ff1563;
     border-radius: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ff1563;
+    font-weight: 550;
 }
 
 .add-photo{
@@ -135,4 +140,11 @@ img{
     position: relative;
     left: 48%;
     transform: translateX(-50%);
+}
+
+.bienvenue{
+    width: 100%;
+    margin: 0;
+    border: none;
+    border-radius: 0;
 }
